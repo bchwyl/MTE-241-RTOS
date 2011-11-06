@@ -1,16 +1,8 @@
 /****************************************************************************
 * Function Name      : kb_i_process
 ******************************************************************************
-* Description   : This process takes messages from the CCI and timer, and 
-*: places them in the output buffer. This process gets the CPU 
-*: when it receives a signal from the UNIX CRT process, which 
-*: only occurs when the buffer is empty. After this data has been
-*: sent, the RTX primitive (send_console_chars, which actually 
-*: writes the data into share memory) sends back an envelope of 
-*: type DISPLAY_ACK. This means that the data has been written 
-*: to the shared memory, and not necessarily that is has been 
-*: outputted to the CPU. This is important to know for debugging 
-*: purposes. 
+* Description   : This process either gets called from a user process, or 
+* a UNIX alarm. 
 */
 
 void kb_i_process() {
