@@ -2,15 +2,15 @@
 * Function Name      : kb_i_process
 ******************************************************************************
 * Description   : This process takes messages from the CCI and timer, and 
-*				: places them in the output buffer. This process gets the CPU 
-*				: when it receives a signal from the UNIX CRT process, which 
-*				: only occurs when the buffer is empty. After this data has been
-*				: sent, the RTX primitive (send_console_chars, which actually 
-*				: writes the data into share memory) sends back an envelope of 
-*				: type DISPLAY_ACK. This means that the data has been written 
-*				: to the shared memory, and not necessarily that is has been 
-*				: outputted to the CPU. This is important to know for debugging 
-*				: purposes. 
+*: places them in the output buffer. This process gets the CPU 
+*: when it receives a signal from the UNIX CRT process, which 
+*: only occurs when the buffer is empty. After this data has been
+*: sent, the RTX primitive (send_console_chars, which actually 
+*: writes the data into share memory) sends back an envelope of 
+*: type DISPLAY_ACK. This means that the data has been written 
+*: to the shared memory, and not necessarily that is has been 
+*: outputted to the CPU. This is important to know for debugging 
+*: purposes. 
 */
 
 void kb_i_process() {
@@ -30,10 +30,10 @@ void kb_i_process() {
 * Function Name      : crt_i_process
 ******************************************************************************
 * Description   : This process takes messages an sends it to the console if it is 
-*				: a certain type. This means that the data has been written 
-*				: to the shared memory, and not necessarily that is has been 
-*				: outputted to the CPU. This is important to know for debugging 
-*				: purposes. 
+*: a certain type. This means that the data has been written 
+*: to the shared memory, and not necessarily that is has been 
+*: outputted to the CPU. This is important to know for debugging 
+*: purposes. 
 */
 void crt_i_process() {
 	if(crt_com_mem_>ok_flag==0){ // If the buffer is empty
