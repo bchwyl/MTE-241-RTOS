@@ -22,10 +22,10 @@ void kb_i_process() {
 * Function Name      : crt_i_process
 ******************************************************************************
 * Description   : This process takes messages an sends it to the console if it is 
-*: a certain type. This means that the data has been written 
-*: to the shared memory, and not necessarily that is has been 
-*: outputted to the CPU. This is important to know for debugging 
-*: purposes. 
+* a certain type. This means that the data has been written 
+* to the shared memory, and not necessarily that is has been 
+* outputted to the CPU. This is important to know for debugging 
+* purposes. 
 */
 void crt_i_process() {
 	if(crt_com_mem_>ok_flag==0){ // If the buffer is empty
